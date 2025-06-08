@@ -9,22 +9,24 @@
     });
   });
   
-  document.addEventListener("DOMContentLoaded", function() {
-    const elements = document.querySelectorAll(".page-title");
-    const fullTitle = document.title;
-    const cleanTitle = fullTitle.split("–")[0].trim(); // strips out branding
-    elements.forEach(el => el.textContent = cleanTitle);
-  });
-  document.addEventListener("DOMContentLoaded", function () {
-    const ogImage = document.querySelector('meta[property="og:image"]')?.getAttribute("content");
-    const targetDiv = document.querySelector(".og-background");
+document.addEventListener("DOMContentLoaded", function () {
+  const elements = document.querySelectorAll(".page-title");
+  const fullTitle = document.title;
+  const cleanTitle = fullTitle.split("–")[0].trim(); // strips out branding
+  elements.forEach(el => el.textContent = cleanTitle);
+});
 
-    if (ogImage && targetDiv) {
-      targetDiv.style.backgroundImage = url('${ogImage}');
-      targetDiv.style.backgroundSize = "cover";
-      targetDiv.style.backgroundPosition = "center";
-    }
-  });
+document.addEventListener("DOMContentLoaded", function () {
+  const ogImage = document.querySelector('meta[property="og:image"]')?.getAttribute("content");
+  const targetDiv = document.querySelector(".og-background");
+
+  if (ogImage && targetDiv) {
+    targetDiv.style.backgroundImage = `url('${ogImage}')`;
+    targetDiv.style.backgroundSize = "cover";
+    targetDiv.style.backgroundPosition = "center";
+  }
+});
+
 
 
   document.addEventListener("DOMContentLoaded", function () {

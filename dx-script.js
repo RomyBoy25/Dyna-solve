@@ -18,14 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const ogImage = document.querySelector('meta[property="og:image"]')?.getAttribute("content");
-  const targetDiv = document.querySelector(".sub-page-banner");
+  const targetDiv = document.querySelector(".og-background");
 
   if (ogImage && targetDiv) {
-    targetDiv.style.backgroundImage = `url('${ogImage}')`;
+    targetDiv.style.backgroundImage = `url('${ogImage}')`; // <-- this line is fixed
     targetDiv.style.backgroundSize = "cover";
     targetDiv.style.backgroundPosition = "center";
   }
-console.log(ogImage)
 });
 
 

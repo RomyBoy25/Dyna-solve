@@ -1,0 +1,204 @@
+Romy, [6/6/2025 1:26 PM]
+.modal {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .modal.modal-active {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-content {
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.23);
+    padding: 2rem;
+    border-radius: 10px;
+    max-height: 90vh;
+    overflow: auto;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+  }
+
+  .modal.modal-active .modal-content {
+    transform: scale(1);
+  }
+
+  /* For Chrome, Edge, Safari */
+  .modal-content::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  .modal-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  .modal-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+.breadcrumbs {
+  font-size: 16px;
+  color: #f1f1f1;
+  text-align:center;
+}
+.breadcrumbs a {
+  color: #cc0000;
+  text-decoration: none;
+  padding: 0 8px;
+}
+.breadcrumbs span {
+  color: #fff;
+  display: inline-block;
+  padding: 0 8px;
+}
+  
+.btn-bg .inside {
+  animation: breatheBg 3s ease-in-out infinite;
+}
+.stroked-text {
+    color: white; /* or transparent if you want only stroke */
+    -webkit-text-stroke: 0.5px #344084; /* thickness + stroke color */
+    text-stroke: 0.5px #344084; /* fallback */
+}
+/* Glow Button Start */
+.glow-button {
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+.glow-button::before,
+.glow-button::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.glow-button::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  z-index: -1;
+  animation: expandFade 2s infinite ease-out;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                0 0 20px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.7),
+                0 0 50px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                0 0 20px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Glow Button End */
+  
+@keyframes expandFade {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+  }
+}
+@keyframes breatheBg {
+  0%, 100% {
+    background-color: rgba(255, 255, 255, 0.60); /* dark base color */
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.33); /* lighter shade for the "breath" effect */
+  }
+}
+.x-mark {
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+  animation: pulseGlowRed 2s infinite ease-in-out;
+  background:red;
+}
+
+.x-mark::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 0, 0, 0.4);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  animation: expandFadeRed 2s infinite ease-out;
+}
+
+Romy, [6/6/2025 1:26 PM]
+@keyframes pulseGlowRed {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3),
+                0 0 20px rgba(255, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.7),
+                0 0 50px rgba(255, 0, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3),
+                0 0 20px rgba(255, 0, 0, 0.2);
+  }
+}
+
+@keyframes expandFadeRed {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+  }
+}

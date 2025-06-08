@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
+
+  document.addEventListener("DOMContentLoaded", function () {
     const limit = 150; // character limit
     document.querySelectorAll('.limited-text').forEach(el => {
       const originalText = el.textContent.trim();
@@ -25,8 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-//  Modal 
-  
+
   document.addEventListener("DOMContentLoaded", function () {
     const openBtns = document.querySelectorAll(".open-modal-btn");
     const closeBtns = document.querySelectorAll(".close-modal");

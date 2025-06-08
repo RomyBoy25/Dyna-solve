@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const ogImage = document.querySelector('meta[property="og:image"]')?.getAttribute("content");
-  const targetDiv = document.querySelector(".og-background");
+  const targetDiv = document.querySelector(".sub-page-banner");
 
   if (ogImage && targetDiv) {
     targetDiv.style.backgroundImage = `url('${ogImage}')`;

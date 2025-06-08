@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     targetDiv.style.backgroundSize = "cover";
     targetDiv.style.backgroundPosition = "center";
   }
+console.log(ogImage)
 });
 
 

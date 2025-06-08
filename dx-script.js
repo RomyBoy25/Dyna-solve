@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const targetDiv = document.querySelector(".sub-page-banner");
 
   if (ogImage && targetDiv) {
-    targetDiv.style.backgroundImage = `url('${ogImage}')`;
+    targetDiv.style.backgroundImage = "url('" + ogImage + "')";
     targetDiv.style.backgroundSize = "cover";
     targetDiv.style.backgroundPosition = "center";
   }

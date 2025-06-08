@@ -1,3 +1,29 @@
+function loadScript(src, callback) {
+  const script = document.createElement('script');
+  script.src = src;
+  script.onload = () => callback && callback();
+  document.head.appendChild(script);
+}
+
+// Load Swiper first
+loadScript("https://unpkg.com/swiper/swiper-bundle.min.js", function () {
+  console.log("Swiper loaded");
+
+  // Then load Weblocks
+  loadScript("https://weblocks.io/library.js", function () {
+    loadScript("https://weblocks.io/script-66-529.js", function () {
+      console.log("Weblocks scripts loaded");
+
+      // Load FoxyCart last
+      loadScript("https://cdn.foxycart.com/dynasolv/loader.js", function () {
+        console.log("FoxyCart loaded");
+      });
+    });
+  });
+});
+
+
+
 
   document.addEventListener("DOMContentLoaded", function () {
     const limit = 150; // character limit
